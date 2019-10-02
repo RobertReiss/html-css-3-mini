@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import './reset.css';
 import './App.css';
+import { thisExpression } from '@babel/types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.dropdown = React.createRef()
+  }
+
+  render() {
+    return (
+      <div> 
+        <nav>
+          <div id="image-container"></div>
+          <i id="hamburder-icon" className="fas fa-bars"/>
+          <div id="button-container">
+          <div className="button">Home</div>
+          <div className="button">About</div>
+          <div className="button">Services</div>
+          <div className="button">Contact</div>
+          </div>
+        </nav>
+        <div id="stuff">The Rest of the Stuff</div>
+      </div>
+    );
+
+  }
 }
 
 export default App;
